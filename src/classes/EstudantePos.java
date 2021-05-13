@@ -27,4 +27,8 @@ public class EstudantePos extends Estudante{
         this.Orientador=orientador;
         this.Tema = tema;
     }
+
+    public  int getTotalCreditos(){
+       return super.getTotalCreditos();
+    }
 }

@@ -71,6 +71,16 @@ public abstract class Estudante {
 
     }
 
+    public  int getTotalCreditos(){
+        int credhrs=0;
+        for(Matricula matricula: getMatriculas()){
+            credhrs+=matricula.getDisciplina().getCreditos();
+        }
+        return  credhrs;
+    }
+
+
+
 
 
 

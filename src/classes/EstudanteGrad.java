@@ -17,4 +17,9 @@ public class EstudanteGrad extends Estudante {
         this.horascomplementares = hrsc;
     }
 
+    public  int getTotalCreditos(){
+        return  super.getTotalCreditos()+getHorascomplementares();
+    }
+
+
 }
