@@ -17,8 +17,14 @@ public class EstudanteGrad extends Estudante {
         this.horascomplementares = hrsc;
     }
 
+    @Override
     public  int getTotalCreditos(){
         return  super.getTotalCreditos()+getHorascomplementares();
+    }
+
+    @Override
+    public String toString(){
+        return super.toString()+" Horas complementares: "+getHorascomplementares();
     }
 
 
