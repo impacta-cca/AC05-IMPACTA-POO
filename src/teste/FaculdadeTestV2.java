@@ -91,13 +91,13 @@ public class FaculdadeTestV2 {
         faculdade.carregarDadosArquivo(nomeArquivoDisciplinas, nomeArquivoEstudantes,
                 nomeArquivoMatriculas);
     }
-
+    //exemplo do documento da AC05
     public void criarArquivoEstudantes(String nomeArquivo) throws FileNotFoundException {
-        estudantesArray = new String[3][];
+        estudantesArray = new String[4][];
         estudantesArray[0] = new String[]{"1000", "Marco Antônio", "marco@gmail.com","GRAD", "30" };
         estudantesArray[1] = new String[]{"1001", "Ângela Maria", "1001" + "amaria@yahoo.com.br","POS","Teste automatizado", "Carlos Torres"};
         estudantesArray[2] = new String[]{"1002", "Fábio Lopes", "fabiot@hotmail.com","POS","Engenharia de Dados","Maria Marcondes"};
-        //estudantesArray[3] = new String[]{"1003", "Ana Clara", "aninha@gmail.com","GRAD", "40"};
+        estudantesArray[3] = new String[]{"1003", "Ana Clara", "aninha@gmail.com","GRAD", "40"};
 
         try (PrintWriter pw = new PrintWriter(nomeArquivo)) {
             for (String[] estudante : estudantesArray) {
@@ -122,11 +122,11 @@ public class FaculdadeTestV2 {
             }
         }
     }
-
+    //atualização das quantidades de matriculas, alunos e matriculas por aluno
     public void criarArquivoMatriculas(String nomeArquivo) throws FileNotFoundException {
-        matriculasArray = new String[7][];
-        matriculasPorEstudante = new int[]{3, 2, 2};
-        matriculasPorDisciplina = new int[]{2, 3, 2};
+        matriculasArray = new String[9][];
+        matriculasPorEstudante = new int[]{3, 2, 2, 2};
+        matriculasPorDisciplina = new int[]{3, 3, 3};
         matriculasArray[0] = new String[]{estudantesArray[0][0], disciplinasArray[0][0]};
         matriculasArray[1] = new String[]{estudantesArray[0][0], disciplinasArray[1][0]};
         matriculasArray[2] = new String[]{estudantesArray[0][0], disciplinasArray[2][0]};
@@ -134,6 +134,9 @@ public class FaculdadeTestV2 {
         matriculasArray[4] = new String[]{estudantesArray[1][0], disciplinasArray[0][0]};
         matriculasArray[5] = new String[]{estudantesArray[2][0], disciplinasArray[1][0]};
         matriculasArray[6] = new String[]{estudantesArray[2][0], disciplinasArray[2][0]};
+        matriculasArray[7] = new String[]{estudantesArray[3][0], disciplinasArray[2][0]};
+        matriculasArray[8] = new String[]{estudantesArray[3][0], disciplinasArray[0][0]};
+
         try (PrintWriter pw = new PrintWriter(nomeArquivo)) {
             for (String[] matricula : matriculasArray) {
                 pw.println(matricula[0] + ":" + matricula[1]);

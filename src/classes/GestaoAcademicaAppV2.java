@@ -10,7 +10,7 @@ public class GestaoAcademicaAppV2 {
     // Interface Principal
     public static void menu(){
         Faculdade faculdade = new Faculdade("FIT - Impacta");
-        faculdade.carregarDadosArquivo("disciplinas.txt","estudantes.txt","matriculas.txt");
+        faculdade.carregarDadosArquivo("disciplinas-a.txt","estudantes-a.txt","matriculas-a.txt");
         while(true) {
             System.out.println("\n==============MENU PRINCIPAL===============");
             Scanner input = new Scanner(System.in);

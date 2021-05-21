@@ -85,7 +85,7 @@ public class Faculdade {
             // ArrayList Disciplina da classe Faculdade
             for (int i = 0; i < nlinhaEstudante; i++) {
                 String[] linhaEstudante = arqEstudante.readLine().split(":");
-                String[] linhaDisciplina = arqDisciplina.readLine().split(":");
+                //verifica se  é aluno de graduação ou de pos-graduação
                 if(linhaEstudante[3].equals("GRAD")){
                     Estudante estudanteg = new EstudanteGrad(Integer.parseInt(linhaEstudante[0]),linhaEstudante[1],linhaEstudante[2],Integer.parseInt(linhaEstudante[4]));
                     estudantes.add(estudanteg);
@@ -96,8 +96,14 @@ public class Faculdade {
                     estudantes.add(estudantePos);
                 }
 
+
+            }
+
+
+            for (int i=0;i<nlinhaDisciplinas;i++){
+                String []linhaDisciplina = arqDisciplina.readLine().split(":");
                 Disciplina disciplina = new Disciplina(linhaDisciplina[0],Integer.parseInt(linhaDisciplina[1]));
-                this.disciplinas.add(disciplina);
+                disciplinas.add(disciplina);
             }
 
             for(int i=0;i<nlinhaMatricula;i++){
