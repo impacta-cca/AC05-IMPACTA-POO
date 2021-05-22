@@ -20,7 +20,7 @@ public class GestaoAcademicaAppV2 {
                     "[3] Listar todas as informações dos estudantes matriculados em uma determinada disciplina.\n" +
                     "[4] Listar todas as informações das disciplinas em que um determinado estudante está matriculado.\n" +
                     "[0] Sair.\n");
-            int escolha=9999;
+            int escolha = 9999;
             try  {
                  escolha = input.nextInt();
             }
@@ -92,12 +92,12 @@ public class GestaoAcademicaAppV2 {
         System.out.println("\n==========LISTA DE ALUNOS MATRICULADOS NESSA DISCIPLINA==============");
         for(Estudante estudante : estudantes){
             if(estudante instanceof EstudantePos) {
-                System.out.println("ID: " + estudante.getId() + "\tNome: " + estudante.getNome() + "\te-mail: " + estudante.getEmail()+ " tema: "+((EstudantePos) estudante).getTema()+" Orientador: "+((EstudantePos) estudante).getOrientador()+
-                        " total de creditos: "+estudante.getTotalCreditos());
+                System.out.println("ID: " + estudante.getId() + "\tNome: " + estudante.getNome() + "\te-mail: " + estudante.getEmail()+ " Tema: "+((EstudantePos) estudante).getTema()+" Orientador: "+((EstudantePos) estudante).getOrientador()+
+                        " Total de créditos: "+estudante.getTotalCreditos());
             }
             else if(estudante instanceof EstudanteGrad){
-                System.out.println("ID: " + estudante.getId() + "\tNome: " + estudante.getNome() + "\te-mail: " + estudante.getEmail()+ " horas complementares: "+((EstudanteGrad) estudante).getHorascomplementares() +
-                        " total de creditos: "+((EstudanteGrad) estudante).getTotalCreditos() );
+                System.out.println("ID: " + estudante.getId() + "\tNome: " + estudante.getNome() + "\te-mail: " + estudante.getEmail()+ " Horas complementares: "+((EstudanteGrad) estudante).getHorascomplementares() +
+                        " Total de créditos: "+((EstudanteGrad) estudante).getTotalCreditos() );
             }
         }
         System.out.println("==========TOTAL DE ALUNOS MATRICULADOS NESSA DISCIPLINA==============");
@@ -140,7 +140,7 @@ public class GestaoAcademicaAppV2 {
         ArrayList<Disciplina> listaDisc = find.getDisciplinasMatriculadas();
         for ( Disciplina disciplina : listaDisc) {
             // o código
-            System.out.print("\nCodigo disciplina: " + disciplina.getCodigo()+", Creditos em horas da disciplinas: "+ disciplina.getCreditos());
+            System.out.print("\nCódigo disciplina: " + disciplina.getCodigo()+", Creditos em horas da disciplinas: "+ disciplina.getCreditos());
             // número de créditos da disciplina
         }
         // total de créditos das matrículas do aluno.
@@ -158,23 +158,9 @@ public class GestaoAcademicaAppV2 {
             Long.parseLong(entrada);
             saida = true;
         } catch (Exception e) {
-            System.out.println("\nID Invalido, tente novamente.");
+            System.out.println("\nID inválido, tente novamente.");
             saida = false;
         }
         return saida;
     }
-
-
-    public static boolean verificarentrada(String entrada){
-        boolean saida;
-        try {
-            Long.parseLong(entrada);
-            saida = true;
-        } catch (Exception e) {
-            System.out.println("\nentrada Invalida, tente novamente.");
-            saida = false;
-        }
-        return saida;
-    }
-
 }
