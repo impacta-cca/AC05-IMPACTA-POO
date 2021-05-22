@@ -20,8 +20,14 @@ public class GestaoAcademicaAppV2 {
                     "[3] Listar todas as informações dos estudantes matriculados em uma determinada disciplina.\n" +
                     "[4] Listar todas as informações das disciplinas em que um determinado estudante está matriculado.\n" +
                     "[0] Sair.\n");
-
-            int escolha = input.nextInt();
+            int escolha=9999;
+            try  {
+                 escolha = input.nextInt();
+            }
+            catch (Exception e){
+                System.out.println("Entrada invalida tente novamente");
+                menu();
+            }
             switch (escolha) {
                 case 0:
                     System.out.println("==========PROGRAMA FINALIZADO===============");
@@ -142,7 +148,7 @@ public class GestaoAcademicaAppV2 {
         for ( Disciplina creditos  : listaDisc ) {
             total += creditos.getCreditos();
         }
-        System.out.println("\nTotal da soma dos créditos: " + total);
+        System.out.println("\nTotal crédito do aluno: " + total);
     }
 
 
@@ -157,4 +163,18 @@ public class GestaoAcademicaAppV2 {
         }
         return saida;
     }
+
+
+    public static boolean verificarentrada(String entrada){
+        boolean saida;
+        try {
+            Long.parseLong(entrada);
+            saida = true;
+        } catch (Exception e) {
+            System.out.println("\nentrada Invalida, tente novamente.");
+            saida = false;
+        }
+        return saida;
+    }
+
 }

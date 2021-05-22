@@ -38,7 +38,7 @@ public class EstudantePos extends Estudante{
     }
 
     public String toString(){
-        return super.toString()+" tema: "+getTema()+" orientador: "+getOrientador();
+        return super.toString()+ " Creditos: "+super.getTotalCreditos()+" tema: "+getTema()+" orientador: "+getOrientador();
     }
 
 }

@@ -79,8 +79,10 @@ public abstract class Estudante {
         return  credhrs;
     }
 
+
+
     @Override
     public String toString(){
-        return "ID: "+getId()+" Nome: "+getNome();
+        return "ID: "+getId()+" Nome: "+getNome() ;
     }
 }

@@ -24,7 +24,7 @@ public class EstudanteGrad extends Estudante {
 
     @Override
     public String toString(){
-        return super.toString()+" Horas complementares: "+getHorascomplementares();
+        return super.toString()+ " Creditos: "+ super.getTotalCreditos() + " Horas complementares: "+getHorascomplementares() ;
     }
 
 
