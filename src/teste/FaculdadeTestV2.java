@@ -1,9 +1,6 @@
 package teste;
 
-import classes.Disciplina;
-import classes.Estudante;
-import classes.Faculdade;
-import classes.Matricula;
+import classes.*;
 import org.junit.Test;
 
 import java.io.FileNotFoundException;
@@ -83,7 +80,7 @@ public class FaculdadeTestV2 {
         String nomeArquivoMatriculas = "matriculas-" + testeId + ".txt";
 
         criarArquivoEstudantes(nomeArquivoEstudantes);
-       criarArquivoDisciplinas(nomeArquivoDisciplinas);
+        criarArquivoDisciplinas(nomeArquivoDisciplinas);
         criarArquivoMatriculas(nomeArquivoMatriculas);
 
         nomeFaculdadeEsperado = "Faculdade Impacta de Tecnologia" + testeId;
@@ -261,4 +258,20 @@ public class FaculdadeTestV2 {
         }
     }
 
+    @Test
+        // Conta quantidades dos tipos de estudantes gerados
+        public void contarEstudantes(){
+        int estGrad = 0;
+        int estPos = 0;
+        for(Estudante estudantes : getFaculdade().getEstudantes()){
+            if(estudantes instanceof EstudanteGrad){
+                estGrad++;
+            } else {
+                estPos++;
+            }
+        }
+        assertEquals(2, estGrad);
+        assertEquals(2, estPos);
+    }  
+  
 }
